@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+      "target": "ES6",                       // Output target (ES5, ES6, etc.)
+      "module": "commonjs",                   // Module system (commonjs, esnext, etc.)
+      "declaration": true,                    // Generate .d.ts files for types
+      "outDir": "./dist",                     // Output directory for compiled files
+      "strict": true,                         // Enable strict type-checking options
+      "esModuleInterop": true                 // Enable import/export interop
+    },
+    "include": ["src/**/*"],                  // Files to include for TypeScript
+    "exclude": ["node_modules", "**/*.test.ts"] // Exclude node_modules and test files
+  }
+  
