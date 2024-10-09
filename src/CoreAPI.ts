@@ -3,6 +3,10 @@ interface Resource {
     [key: string]: any;
 }
 
+interface ResourceResponse {
+    resources: Resource[];
+}
+
 interface APIError {
     detail: string;
 }
@@ -51,8 +55,9 @@ class CoreAPI {
                 throw new Error(errorData.detail || 'Failed to fetch resources');
             }
 
-            const data: Resource[] = await response.json();
-            return data;
+            const data: ResourceResponse = await response.json();
+            const resources: Resource[] = data.resources;
+            return resources;
         } catch (error) {
             console.error('Error fetching resources:', error);
             throw error;

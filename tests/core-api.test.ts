@@ -12,7 +12,7 @@ describe('CoreAPI', () => {
 
         const result = await api.getResources('systems');
 
-        result.resources.forEach(resource => {
+        result.forEach(resource => {
             expect(resource).toHaveProperty('kind');
             expect(resource).toHaveProperty('apiVersion');
             expect(resource).toHaveProperty('metadata');
